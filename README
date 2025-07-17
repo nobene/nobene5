@@ -67,18 +67,18 @@ Pains of installation on openBSD :(
   You can add new card to the current board with +[] item from main menu
    (to 4th column of the current board).
 
-  By doubleclick on card you can get card's menu and switch between 3 views : gray (aka Brief),
-   brown-inked-centered (aka Yell) and hidden view (aka Hide).
-  Card will be then shown with chosen view.
+  By doubleclick on card you can get card's menu and switch between 3 views :
+   gray (aka Brief), brown-inked-centered (aka Yell) and hidden view (aka Hide).
+  Card will be then shown with choosen view.
   Full view is not implemented yet.
-  Close card's menu by doubleclicking on top or bottom string of it.
+  Close card's menu by clicking on top or bottom string of it.
 
   You can edit card just by clicking on it and typing/deleting new text from it
    and then by moving pointer out of the card. Card will be saved.
 
   You can delete card by typing in it ????? and then moving pointer out of the card.
 
-  You can insert emojies into the card from rightclick context menu,\
+  You can insert emojies into the card from rightclick context menu,
    if Noto Emoji font is installed
    (this feature does nor work on OpenBSD somehow ?!).
 
