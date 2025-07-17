@@ -57,14 +57,15 @@ Pains of installation on openBSD :(
    but old and new boards will share same set of cards, so editing will change content of same card
    in both boards. Of course later you can add cards to these boards, and they will start to diverge,
    as newly added cards will be unique and not shared.
-  Cloning with $$ can also be used for renaming of board with unlucky name. Just clone to better name, then
-   delete old board.
+  Cloning with $$ can also be used for renaming of board with unlucky name.
+   Just clone to better name, then delete old board.
 
   You can load another board with >>BoardName.
 
   You can save current board with [SAVE] item clicked from main menu.
 
-  You can add new card to the current board with +[] item from main menu ( to 4th column ).
+  You can add new card to the current board with +[] item from main menu
+   (to 4th column of the current board).
 
   By doubleclick on card you can get card's menu and switch between 3 views : gray (aka Brief),
    brown-inked-centered (aka Yell) and hidden view (aka Hide).
