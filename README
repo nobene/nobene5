@@ -66,7 +66,8 @@ Pains of installation on openBSD :(
 
   You can add new card to the current board with +[] item from main menu ( to 4th column ).
 
-  By doubleclick on card you can get card's menu and switch between 3 views : gray (aka brief), brown-inked-centered and hidden.
+  By doubleclick on card you can get card's menu and switch between 3 views : gray (aka Brief),
+   brown-inked-centered (aka Yell) and hidden view (aka Hide).
   Card will be then shown with chosen view.
   Full view is not implemented yet.
   Close card's menu by doubleclicking on top or bottom string of it.
@@ -76,14 +77,16 @@ Pains of installation on openBSD :(
 
   You can delete card by typing in it ????? and then moving pointer out of the card.
 
-  You can insert emojies into the card from rightclick context menu, if Noto Emoji font is installed
+  You can insert emojies into the card from rightclick context menu,\
+   if Noto Emoji font is installed
    (this feature does nor work on OpenBSD somehow ?!).
 
   You can open/close list of all saved boards by clicking on [≡] button,
    located in the bottom right corner of your screen,
    or by clicking on top or bottom string or on middle separator of main menu widget.
 
-  You can clone card with @@DestinationBoard typed inside of any card (type from the start of 1st string).
+  You can clone card with @@DestinationBoard typed inside of any card
+   (type from the start of 1st string).
    Card will be copied without @@* command. This action is truely cloning of one card.
    So later you can safely edit them separately.
 
@@ -93,7 +96,8 @@ Pains of installation on openBSD :(
 
   You can adjust font size of cards with inputs ==42 typed in any card
    (type from the start of 1st string) , where "42" in this example means font size in pixels.
-   Default value is 26px. If by mistake you have set size like ==11, then just set it again to higher value.
+   Default value is 26px. If by mistake you have set size like ==11,
+   then just set it again to higher value.
    this works only during Nobene5's run, so each time you have to set it again after launch
    or you can change it to suitable value in nobene5.css (string 49).
 
