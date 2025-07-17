@@ -1,0 +1,129 @@
+This is a minimalist desktop kanban application.
+Basic usage described in built-in "help" board.
+Just start it and see ;)
+For abuse of emojies install Google Noto Emoji Fonts.
+on Void Linux they are known as package "noto-fonts-emoji",
+search for correct package's name on your OS.
+
+Nobene5 tested on Void Linux, it also works on FreeBSD 14.
+Might work on OpenBSD and maybe on MacOS and NetBSD.
+Maybe only some file paths must be adjusted in nobene5.js file.
+
+Installation.
+  0) You must install Golang 1.21 and https://github.com/webview/webview_go with dependencies.
+
+  1) $ git clone https://github.com/nobene/nobene5
+
+  2) $ cd nobene5
+
+  3) $ go build
+
+     Copy "nb5" script to your path.
+     Later you can adjust default font-size value to your taste in nobene5.css:49,14 .
+
+  4) $ cd ~nobene5 && ./nobene5
+     OR
+     $ nb5
+
+Pains of installation on openBSD :(
+  1) Besides steps described above on OpenBSD you must do more tricks :
+     a)
+     # ln -s /usr/lib/libc.a /usr/lib/libdl.a 
+     (it's a dirty trick, but it works).
+
+    b)
+    find in /usr/local/lib/pkgconfig files : webkit2gtk-4.0.pc webkit2gtk-web-extension-4.0.pc
+    javascriptcoregtk-4.0.pc and from each file (or maybe from some other *.pc files as well)
+     delete these flags :
+     -Wl,-z,nobtcfi  -Wl,-z,wxneeded
+
+    c)
+    set property "wxallowed" to filesystems in /etc/fstab then reboot.
+
+    d)
+    $ export CGO_LDFLAGS="-lc"
+    $ CGO_ENABLED=1 go build
+
+    e) now you can copy and start via "nb2" as described above in 3) and 4).
+
+    Features.
+  Nobene5 is a kanban board.
+
+  On startup it loads "help" board with usage information.
+
+  You can create new board with ++BoardName typed in any card (from the start of 1st string).
+
+  You can clone board  with $$BoardNewName typed in any card. Only board scheme will be cloned,
+   but old and new boards will share same set of cards, so editing will change content of same card
+   in both boards. Of course later you can add cards to these boards, and they will start to diverge,
+   as newly added cards will be unique and not shared.
+  Cloning with $$ can also be used for renaming of board with unlucky name. Just clone to better name, then
+   delete old board.
+
+  You can load another board with >>BoardName.
+
+  You can save current board with [SAVE] item clicked from main menu.
+
+  You can add new card to the current board with +[] item from main menu ( to 4th column ).
+
+  By doubleclick on card you can get card's menu and switch between 3 views : gray (aka brief), brown-inked-centered and hidden.
+  Card will be then shown with chosen view.
+  Full view is not implemented yet.
+  Close card's menu by doubleclicking on top or bottom string of it.
+
+  You can edit card just by clicking on it and typing/deleting new text from it
+   and then by moving pointer out of the card. Card will be saved.
+
+  You can delete card by typing in it ????? and then moving pointer out of the card.
+
+  You can insert emojies into the card from rightclick context menu, if Noto Emoji font is installed
+   (this feature does nor work on OpenBSD somehow ?!).
+
+  You can open/close list of all saved boards by clicking on [≡] button,
+   located in the bottom right corner of your screen,
+   or by clicking on top or bottom string or on middle separator of main menu widget.
+
+  You can clone card with @@DestinationBoard typed inside of any card (type from the start of 1st string).
+   Card will be copied without @@* command. This action is truely cloning of one card.
+   So later you can safely edit them separately.
+
+  You can delete current board with /DELETE typed in any card .
+
+  You can quit app by closing Nobene5's window (only available safe exit method).
+
+  You can adjust font size of cards with inputs ==42 typed in any card
+   (type from the start of 1st string) , where "42" in this example means font size in pixels.
+   Default value is 26px. If by mistake you have set size like ==11, then just set it again to higher value.
+   this works only during Nobene5's run, so each time you have to set it again after launch
+   or you can change it to suitable value in nobene5.css (string 49).
+
+  Nobene5 app has rightclickable context menu with handy copy and paste and emoji items.
+
+  And of course you can drag and drop cards to new position on board.
+
+  Every time you save board, two copies saved : BoardName and BoardName-bup.
+  *-bup boards are not shown in the list, but you can load them with >BoardName-bup .
+  If you save BoardName-bup, it creates BoardName-bup-bup :)
+  So, you can load backup of backup and work on it too.
+
+  Note: Nobene5 does not allow spaces in board name ( it's a feature ),
+  max. length of board name is 32 symbols.
+  Neither accepted board names with dashes ( it's a bug perhaps ).
+  Underscores and pluses in board names are allowed.
+
+Licenses.
+
+ As a whole Nobene5 project licensed by Apache License 2.0, See : ./LICENSE.apache2
+ "nobene5" binary file and main.go, nobene5.js, nobene5.html files are licensed by Apache License 2.0,
+  See ./LICENSE.apache2
+ dragula.js, dragula.css, dragbase.js, nobene5.css are licensed by MIT License, See : ./license
+ FiraCodeNerdFont-Medium.woff file licensed by SIL OFL v1.1 License, See ./FiraCode.LICENSE
+ FontAwesome6Free-Solid.woff file licensed by SIL OFL v1.1 License, See ./FontAwesome.LICENSE
+
+Backups.
+ For backing up your works just copy entire directory "store" with all of it's content
+ somewhere outside of "nobene5" directory tree.
+ "store0" directory exists for having "help" board only starting pack,
+ just in case you some day might discard  all your prior work and start over again from scratch.
+ In such case delete all content inside "store" and copy all from "store0" to "store".
+

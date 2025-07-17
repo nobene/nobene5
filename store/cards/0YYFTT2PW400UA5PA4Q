@@ -1,0 +1,4 @@
+$cloned clones current board to new
+board "cloned".
+all cards are shared between both boards after cloning.
+so if card edited on one board, it's content will be altered on another board as well.

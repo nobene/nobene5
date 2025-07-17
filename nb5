@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/nobene5
+./nobene5

@@ -1,0 +1,365 @@
+@font-face {
+  font-family: 'FCM';
+  font-weight: 450 !important;
+  font-style: normal;
+  src: url('FiraCodeNerdFont-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Fawesome';
+  font-weight: 400 !important;
+  font-style: normal;
+  src: url('FontAwesome6Free-Solid.woff') format('woff');
+}
+
+
+
+body {
+  background-color: #78866b;
+  margin: 0 auto;
+  max-width: auto;
+}
+
+html, body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: FCM !important;
+}
+
+span {
+  color: #777799;
+  width: 100%;
+}
+
+mark {
+  font_family: Fawesome !important;
+  font-size: 30px;
+  color: #8d7b68 !important;
+  background-color: transparent !important;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body, input, button {
+  font-size: 26px !important;
+  color: #111 !important;
+}
+
+
+h1 {
+  text-align: center;
+  background-color: #eee;
+  margin-top: 28px;
+  margin-bottom: 0;
+  padding: 10px;
+}
+
+h3 {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 5px solid #A13462;
+  text-align: center;
+  padding: 10px;
+}
+
+h3 div {
+  margin-bottom: 10px;
+}
+
+a {
+  font-weight: bold;
+}
+a,
+a:hover {
+  color: #6e85b7;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+pre code {
+  color: darkblue;
+  font-size: 36px;
+  line-height: 1.3;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+@keyframes superSUPERSecret {
+  0%{transform: rotate(3deg)}
+  50%{transform: rotate(-3deg)}
+  100%{transform: rotate(3deg)}
+}
+
+sub {
+  display: block;
+  text-align: right;
+  margin-top: -10px;
+  font-size: 16px;
+  font-style: italic;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  background-color: transparent;
+  margin: 10px 0;
+  padding: 4px;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 10px;
+  color: transparent;
+  border-radius: 6px;
+  border: 2px dotted #34626c;
+  margin: 5px 0;
+  display: block;
+  width: 100%;
+  font-size: 38px !important;
+}
+
+button {
+  background-color: transparent;
+  color: #78866b;
+  border: 4px double #666362;
+  border-radius: 10px;
+  padding: 12px 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  outline: none;
+  font-size: 38px;
+  position: relative;
+}
+
+button:hover {
+  background-color: #78aba8;
+  color: #111;
+  border: 4px double #776b5d;
+  border-radius: 10px;
+}
+
+.gh-fork {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+/* dragula-specific example page styles */
+.wrapper {
+  display: table;
+}
+.container {
+  display: table-cell;
+  background-color: transparent;
+  width: 20%;
+}
+
+.container:nth-child(odd) {
+  background-color: transparent;
+}
+
+.container > div,
+.gu-mirror {
+  margin: 6px;
+  padding: 10px;
+}
+.container > div {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  border: 2px outset #8d7b68;
+  border-radius: 6px;
+  background-color: #b5b4b3;
+  white-space: pre-wrap;
+  font-weight: 400 ! important;
+/*  width: 19% */
+}
+.gu-mirror {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+.container .ex-moved {
+  background-color: #e74c3c;
+}
+.container.ex-over {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#left-lovehandles > div,
+#right-lovehandles > div {
+  cursor: initial;
+}
+
+textarea {
+  background-color: transparent;
+  color : transparent;
+  font-size: 36px;
+  min-width: 850px;
+  height: 250px;
+  border: 2px dotted #34626c;
+  margin-left: 5%;
+}
+
+#menu > div > div:hover {
+  background-color : #78aba8 !important;
+  font-weight: 550;
+}
+
+#menu {
+  background-color: #b5b4b3 !important;
+  color : #6f4e37 !important;
+  border: 4px solid #34626c;
+  border-radius: 10px;
+  min-height: 200px;
+  min-width: 400px;
+  top: 2% !important;
+  left: 60%;
+  position: absolute;
+  text-align: center;
+}
+
+#menu:focus {
+  background-color: transparent !important;
+  color : #6f4e37 !important;
+  border: 4px solid #34626c;
+  border-radius: 10px;
+  min-height: 200px;
+  min-width: 400px;
+  top: 2% !important;
+  left: 60%;
+  position: absolute;
+  z-index: 7;
+}
+
+#actions > div > div:hover {
+  background-color : #78aba8 !important;
+  font-weight: 550;
+}
+
+#actions {
+  background-color: #b5b4b3 !important;
+  color : #6f4e37 !important;
+  border: 4px solid #34626c;
+  border-radius: 10px;
+  min-height: 200px;
+  min-width: 160px;
+  position: absolute;
+  text-align: center;
+}
+
+#actions:focus {
+  background-color: transparent !important;
+  color : #6f4e37 !important;
+  border: 4px solid #34626c;
+  border-radius: 10px;
+  min-height: 200px;
+  min-width: 160px;
+  position: absolute;
+  z-index: 8;
+}
+
+
+#x {
+  top: 2%;
+  left: 90%;
+  position: absolute;
+  display: inline;
+  z-index: 10;
+}
+
+#out {
+  border: 0;
+  border-radius: 6px;
+  display: block;
+}
+
+#out:focus {
+  background-color: #b2b7b3;
+  color : #8d7b68;
+  border: 2px solid #34626c;
+  border-radius: 6px;
+  min-height: 900px;
+  top: 2% !important;
+  left: 10%;
+  position: absolute;
+}
+
+#in {
+  height: 56px !important;
+  min-width: 15% !important;
+  max-width: 25% !important;
+  position: absolute;
+  left: 62.5%;
+  top: 89%;
+  color: #6f4e37 !important;
+}
+
+#in:focus {
+  background-color: #b5b4b3 !important;
+  color : #8d7b68 !important;
+  font-size: 36px !important;
+}
+
+#enter {
+  position: absolute;
+  left: 88%;
+  top: 89%;
+  font-size: 36px;
+}
+
+#boards {
+  position: absolute;
+  left: 92%;
+  top: 89%;
+  font-size: 36px;
+}
+
+#toggle {
+  position: absolute;
+  left: 92%;
+  top: 76%;
+  font-size: 36px;
+}
+
+#save {
+  position: absolute;
+  left: 58%;
+  top: 89%;
+  font-size: 36px;
+}
+
+div.yell {
+  background-color: #b5b4b3 !important;
+  color: #6f4e37 !important;
+  text-align: center;
+  font-weight: 580 !important;
+}
+
+div.red {
+  background-color: #b5b4b3 !important;
+  color: darkred;
+  text-align: center;
+}
+
+.hid {
+  border: 0 !important;
+  color: transparent !important;
+  background-color: #78866b !important;
+}
+
