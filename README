@@ -107,7 +107,7 @@ Pains of installation on openBSD :(
   And of course you can drag and drop cards to new position on board.
 
   Every time you save board, two copies saved : BoardName and BoardName-bup.
-  *-bup boards are not shown in the list, but you can load them with >BoardName-bup .
+  *-bup boards are not shown in the list, but you can load them with >>BoardName-bup .
   If you save BoardName-bup, it creates BoardName-bup-bup :)
   So, you can load backup of backup and work on it too.
 
