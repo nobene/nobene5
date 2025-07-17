@@ -44,7 +44,7 @@ Pains of installation on openBSD :(
     $ export CGO_LDFLAGS="-lc"
     $ CGO_ENABLED=1 go build
 
-    e) now you can copy and start via "nb2" as described above in 3) and 4).
+    e) now you can copy and start via "nb5" as described above in 3) and 4).
 
     Features.
   Nobene5 is a kanban board.
