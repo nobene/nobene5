@@ -14,10 +14,10 @@
 //   limitations under the License.
 
 async function save(name) {
-  if ( !document.getElementById(name) ) {
-    alert('card has no UID ' + name);
-    return;
-  };
+//  if ( !document.getElementById(name) ) {
+//    alert('card has no UID ' + name);
+//    return;
+//  };
   var text = document.getElementById(name).innerText;
   if ( text.includes('/DELETE') ) {
     await delete_board();
@@ -28,39 +28,38 @@ async function save(name) {
     return;
   }
   if ( text.includes('==') ) {
-    var fontsize = text.split(' ')[0].substring(2,4);
+    var fontsize = text.trimStart().split(' ')[0].substring(2,4);
 //    alert(fontsize);
     var wra = document.querySelector('.wrapper');
-    if ( wra < 16 ) { wra = 16 };
+//    if ( wra < 16 ) { wra = 16 };
     wra.style.fontSize = fontsize + 'px';
-    return;
+    text = text.trimStart().substring(4,);
+//    return;
   };
   if ( text.includes('@@') ) {
-    var bname = text.split(' ')[0]
-    import_board(bname.substring(2,));
-    clone_card(name);
+    var bname = text.split(' ')[0];
+    await import_board(bname.substring(2,));
+    await clone_card(name);
+//    await export_board();
     return;
   }
   if ( text.includes('++') ) {
-    var bname1 = text.split(' ')[0]
-    if ( bname1.substring(2,) === '' ) {
-       alert('empty name of new board');
-       return;
-    };
+    var bname1 = text.trimStart().split(' ')[0]
     await new_board(bname1.substring(2,));
     return;
   };
   if ( text.includes('>>') ) {
-    var bname2 = text.split(' ')[0]
+    var bname2 = text.trimStart().split(' ')[0];
     await import_board(bname2.substring(2,));
     return;
   };
   if ( text.includes('$$') ) {
-    var bname3 = text.split(' ')[0]
+    var bname3 = text.trimStart().split(' ')[0]
     act0 = await read_board('store/boards/' + document.title);
     res4 = await write_board('store/boards/' + bname3.substring(2,), act0);
     document.title = bname3.substring(2,);
     await import_board(document.title);
+    await export_board();
     return;
   };
   document.getElementById(name).innerHTML = text;
@@ -264,6 +263,10 @@ async function hide_actions() {
   return;
 };
 
+async function full(id) {
+  return id
+}
+
 async function show_actions(aid) {
   if (document.getElementById('actions').innerHTML != '') {
     hide_actions();
@@ -288,10 +291,14 @@ async function new_board(name) {
   if ( name.length > 32 ) {
     name = name.substr(0 , 32);
   };
+  if ( name === '' ) {
+    alert('empty board name');
+    return;
+  };
   var boards = await list_boards();
 //  console.log('boards dir : ' + boards);
   if ( boards.includes(name) === true ) {
-    console.log('Board with name : ' + name + ' already exists, can not create it !');
+    alert('Board with name : ' + name + ' already exists, can not create it !');
     return;
   };
   const col1 = document.getElementById('1');
@@ -420,7 +427,8 @@ async function import_board(name) {
     var c5 = bd[4].split('-');
   } catch (e) {
     if (e) {
-      import_board('help');
+      alert('failed to import board: ' + name);
+      import_board('dump');
       return;
     };
   };
