@@ -40,16 +40,21 @@ async function save(name) {
     var bname = text.split(' ')[0];
     await import_board(bname.substring(2,));
     await clone_card(name);
-//    await export_board();
+    await export1();
+    await import_board(bname.substring(2,));
     return;
   }
   if ( text.includes('++') ) {
     var bname1 = text.trimStart().split(' ')[0]
     await new_board(bname1.substring(2,));
+    await export1();
+    await import_board(bname1.substring(2,));
     return;
   };
   if ( text.includes('>>') ) {
     var bname2 = text.trimStart().split(' ')[0];
+    await import_board(bname2.substring(2,));
+    await export1();
     await import_board(bname2.substring(2,));
     return;
   };
